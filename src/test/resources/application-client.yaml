@@ -1,0 +1,8 @@
+manageAddress: 121.55.55.55 # 代理服务器的公网IP
+managePort: 2150
+tunnelAddress: 121.55.55.55 # 代理服务器的公网IP
+tunnelPort: 2151
+
+# 客户端配置
+clientId: user1
+clientToken: 4V9sFuHg1I3s4KE2fppTnkTbQ0JuG3zj9qhzHu7Q3iM=

@@ -1,0 +1,24 @@
+# 0.0.0.0表示监听所有ip
+manageAddress: 0.0.0.0
+managePort: 2150
+tunnelAddress: 0.0.0.0
+tunnelPort: 2151
+
+# 服务端配置
+managePassword: passwd
+# 可以配置多个client，每个client用不同的密码。如果密码修改了，那么token需要重新生成
+clients:
+  user1: pass
+  user2: pass
+  user3: pass
+  user4: pass
+services:
+  nas:
+    clientId: user1
+    protocol: tcp
+    proxy:
+      serverAddress: 0.0.0.0 # 公网ip对应的服务器的ip（不是公网IP），建议用0.0.0.0
+      serverPort: 2199
+    client:
+      serviceAddress: 172.17.1.118 # 内网服务的ip
+      servicePort: 888 # 内网服务的端口

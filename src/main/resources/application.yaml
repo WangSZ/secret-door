@@ -1,0 +1,46 @@
+# 公共配置
+manageAddress: 0.0.0.0
+managePort: 10000
+tunnelAddress: 0.0.0.0
+tunnelPort: 10001
+
+# 服务端配置
+managePassword: managePassword
+clients:
+  home-router: pass
+  home-router1: pass
+services:
+  nas2:
+    clientId: home-router
+    protocol: tcp
+    proxy:
+      serverAddress: 0.0.0.0
+      serverPort: 10052
+    client:
+      serviceAddress: 172.17.1.118
+      servicePort: 888
+  nas1:
+    clientId: home-router1
+    protocol: tcp
+    proxy:
+      serverAddress: 0.0.0.0
+      serverPort: 10051
+    client:
+      serviceAddress: 172.17.1.118
+      servicePort: 888
+  nas:
+    clientId: home-router
+    protocol: tcp
+    proxy:
+      serverAddress: 0.0.0.0
+      serverPort: 10050
+    client:
+      serviceAddress: 172.17.1.118
+      servicePort: 888
+
+# 客户端配置
+
+clientId: home-router
+clientToken: q95ClmYgCUPKC6gwB7EHblEnstmm8fSxEsfhB1j/ImI+o9d+T3yurS85IqRzt7E8
+#clientId: home-router1
+#clientToken: X2o5H7mAtw8bhA5RnMNIed7VTuTzqg63xxY0wlXGahlhhX1pIPpK+RNd+8MAcCWb
