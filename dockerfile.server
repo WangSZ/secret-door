@@ -1,0 +1,4 @@
+FROM mcr.microsoft.com/java/jre-headless:8-zulu-alpine
+VOLUME /etc/secret-door
+ADD target/app.jar /app.jar
+ENTRYPOINT ["java","-Dmode=server","-Dspring.config.location=/etc/secret-door/","-jar","/app.jar"]

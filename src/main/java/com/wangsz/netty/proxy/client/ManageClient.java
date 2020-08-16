@@ -60,7 +60,7 @@ public class ManageClient implements IService {
                                 }
                             });
                         }else {
-                            log.error("cant connect to proxy server");
+                            log.error("cant connect to proxy server {}:{}",proxyConfig.getManageAddress(), proxyConfig.getManagePort());
                         }
                     }
                 });

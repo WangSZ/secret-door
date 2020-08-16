@@ -22,9 +22,14 @@
 user <-> proxy.serverPort <-channel-> tunnelPort <-channel-> client.servicePort
 ```
 
+# Docker 方式运行
+运行容器，`/etc/secret-door`下新建`application.yaml`文件，内容参考后文
+```shell
+docker run  --restart=always -d --name sds -v /share/nas/data/secret-door-s/:/etc/secret-door wszd/sds
+docker run  --restart=always -d --name sdc -v /share/nas/data/secret-door-c/:/etc/secret-door wszd/sdc
+```
 
-
-# 用法
+# jar 方式运行
 
 jar包和application.yaml放到同一个目录，运行`java -jar app.jar`启动
 ## server
@@ -88,3 +93,13 @@ tunnelPort: 2151
 clientId: user1
 clientToken: 4V9sFuHg1I3s4KE2fppTnkTbQ0JuG3zj9qhzHu7Q3iM=
 ```
+
+
+
+# 构建Docker镜像
+
+1. 编译项目 `mvn install`
+2. 构建server镜像
+`docker build --network=host -f dockerfile.server -t wszd/sds .`
+3. 构建client镜像
+`docker build --network=host -f dockerfile.client -t wszd/sdc .`
